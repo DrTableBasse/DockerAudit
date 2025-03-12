@@ -1,0 +1,17 @@
+[project]
+name = "dockeraudit"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "certifi==2025.1.31",
+    "charset-normalizer==3.4.1",
+    "docker-py==1.10.6",
+    "docker-pycreds==0.4.0",
+    "idna==3.10",
+    "requests==2.32.3",
+    "six==1.17.0",
+    "urllib3==2.3.0",
+    "websocket-client==1.8.0",
+]
