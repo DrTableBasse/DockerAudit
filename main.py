@@ -1,4 +1,5 @@
 import json
+import subprocess
 from dockerauditagent.check_rootless import check_rootless
 from dockerauditagent.check_daemon_json import check_daemon_json
 from dockerauditagent.check_docker_socket import check_docker_socket
@@ -6,6 +7,15 @@ from dockerauditagent.get_docker_versions import check_docker_versions
 from dockerauditagent.check_container_capabilities import check_containers_capabilities
 from dockerauditagent.check_image_registry import check_container_registry
 from dockerauditagent.check_sensitive_info import check_container_sensitives
+
+def get_running_container_ids():
+    try:
+        result = subprocess.run(["docker", "ps", "-q"], capture_output=True, text=True, check=True)
+        container_ids = result.stdout.strip().splitlines()
+        return container_ids
+    except subprocess.CalledProcessError as e:
+        print(f"Erreur lors de l'exécution de docker ps: {e}")
+        return []
 
 def main():
     # Vérifier les versions Docker locales et de la dernière version
@@ -42,14 +52,13 @@ def main():
     checks_results["docker_container_capabilities_check"] = json.loads(containers_capabilities_result)
 
     # Vérification des informations sensibles dans les conteneurs
-    container_ids = ["3d3d1431de5e", "08fc977dd12b", "d3af41ce560a", "835c8b4a06b3", "00cc58f396f8", 
-                     "68af428c816c", "68160faba2ed", "c7e7a6834f71", "b62b938ca71e", "ecc47ad6307b"]
+    container_ids = get_running_container_ids()
     
     sensitive_info_results = {}
     for container_id in container_ids:
         sensitive_info = check_container_sensitives(container_id)
         sensitive_info_results[container_id] = sensitive_info
-    
+
     checks_results["docker_container_sensitives_check"] = sensitive_info_results
 
     # Convertir le dictionnaire des résultats en JSON
