@@ -1,0 +1,249 @@
+{
+    "docker_versions_check": {
+        "docker_versions_check": {
+            "check": "Docker Version Check",
+            "local_version": "28.0.1"
+        }
+    },
+    "rootless_check": {
+        "check": "Docker rootless",
+        "status": false
+    },
+    "daemon_json_check": {
+        "check": "Daemon JSON",
+        "status": false
+    },
+    "docker_socket_check": {
+        "check": "Docker Socket Exposure",
+        "status": "skipped",
+        "message": "La vérification de daemon.json a échoué."
+    },
+    "docker_container_registry_check": {
+        "3d3d1431de5e": {
+            "check": "Docker Container Registry",
+            "status": "success",
+            "container_name": "jellyseerr",
+            "running": "started",
+            "uses_private_registry": true,
+            "registry_type": "Public"
+        },
+        "08fc977dd12b": {
+            "check": "Docker Container Registry",
+            "status": "success",
+            "container_name": "radarr",
+            "running": "started",
+            "uses_private_registry": true,
+            "registry_type": "Public"
+        },
+        "d3af41ce560a": {
+            "check": "Docker Container Registry",
+            "status": "success",
+            "container_name": "qbittorrent",
+            "running": "started",
+            "uses_private_registry": true,
+            "registry_type": "Public"
+        },
+        "835c8b4a06b3": {
+            "check": "Docker Container Registry",
+            "status": "success",
+            "container_name": "sonarr",
+            "running": "started",
+            "uses_private_registry": true,
+            "registry_type": "Public"
+        },
+        "00cc58f396f8": {
+            "check": "Docker Container Registry",
+            "status": "success",
+            "container_name": "flaresolverr",
+            "running": "started",
+            "uses_private_registry": true,
+            "registry_type": "Public"
+        },
+        "68af428c816c": {
+            "check": "Docker Container Registry",
+            "status": "success",
+            "container_name": "prowlarr",
+            "running": "started",
+            "uses_private_registry": true,
+            "registry_type": "Public"
+        },
+        "68160faba2ed": {
+            "check": "Docker Container Registry",
+            "status": "success",
+            "container_name": "jellyfin",
+            "running": "started",
+            "uses_private_registry": true,
+            "registry_type": "Public"
+        },
+        "c7e7a6834f71": {
+            "check": "Docker Container Registry",
+            "status": "success",
+            "container_name": "joal",
+            "running": "started",
+            "uses_private_registry": true,
+            "registry_type": "Public"
+        },
+        "b62b938ca71e": {
+            "check": "Docker Container Registry",
+            "status": "success",
+            "container_name": "gluetun_vpn",
+            "running": "started",
+            "uses_private_registry": true,
+            "registry_type": "Public"
+        },
+        "ecc47ad6307b": {
+            "check": "Docker Container Registry",
+            "status": "success",
+            "container_name": "watchtower",
+            "running": "started",
+            "uses_private_registry": true,
+            "registry_type": "Public"
+        }
+    },
+    "docker_container_capabilities_check": {
+        "3d3d1431de5e": {
+            "container_name": "jellyseerr",
+            "check": "Docker Container Capabilities",
+            "status": true,
+            "running": "started",
+            "capabilities": null
+        },
+        "08fc977dd12b": {
+            "container_name": "radarr",
+            "check": "Docker Container Capabilities",
+            "status": true,
+            "running": "started",
+            "capabilities": null
+        },
+        "d3af41ce560a": {
+            "container_name": "qbittorrent",
+            "check": "Docker Container Capabilities",
+            "status": true,
+            "running": "started",
+            "capabilities": null
+        },
+        "835c8b4a06b3": {
+            "container_name": "sonarr",
+            "check": "Docker Container Capabilities",
+            "status": true,
+            "running": "started",
+            "capabilities": null
+        },
+        "00cc58f396f8": {
+            "container_name": "flaresolverr",
+            "check": "Docker Container Capabilities",
+            "status": true,
+            "running": "started",
+            "capabilities": null
+        },
+        "68af428c816c": {
+            "container_name": "prowlarr",
+            "check": "Docker Container Capabilities",
+            "status": true,
+            "running": "started",
+            "capabilities": null
+        },
+        "68160faba2ed": {
+            "container_name": "jellyfin",
+            "check": "Docker Container Capabilities",
+            "status": true,
+            "running": "started",
+            "capabilities": null
+        },
+        "c7e7a6834f71": {
+            "container_name": "joal",
+            "check": "Docker Container Capabilities",
+            "status": true,
+            "running": "started",
+            "capabilities": null
+        },
+        "b62b938ca71e": {
+            "container_name": "gluetun_vpn",
+            "check": "Docker Container Capabilities",
+            "status": true,
+            "running": "started",
+            "capabilities": [
+                "net_admin"
+            ]
+        },
+        "ecc47ad6307b": {
+            "container_name": "watchtower",
+            "check": "Docker Container Capabilities",
+            "status": true,
+            "running": "started",
+            "capabilities": null
+        }
+    },
+    "docker_container_sensitives_check": {
+        "3d3d1431de5e": {
+            "container_id": "3d3d1431de5e",
+            "sensitive_data": [
+                "key"
+            ]
+        },
+        "08fc977dd12b": {
+            "container_id": "08fc977dd12b",
+            "sensitive_data": [
+                "key",
+                "auth"
+            ]
+        },
+        "d3af41ce560a": {
+            "container_id": "d3af41ce560a",
+            "sensitive_data": [
+                "key",
+                "auth"
+            ]
+        },
+        "835c8b4a06b3": {
+            "container_id": "835c8b4a06b3",
+            "sensitive_data": [
+                "key",
+                "auth"
+            ]
+        },
+        "00cc58f396f8": {
+            "container_id": "00cc58f396f8",
+            "sensitive_data": [
+                "key"
+            ]
+        },
+        "68af428c816c": {
+            "container_id": "68af428c816c",
+            "sensitive_data": [
+                "key",
+                "auth"
+            ]
+        },
+        "68160faba2ed": {
+            "container_id": "68160faba2ed",
+            "sensitive_data": [
+                "key"
+            ]
+        },
+        "c7e7a6834f71": {
+            "container_id": "c7e7a6834f71",
+            "sensitive_data": [
+                "token",
+                "key",
+                "secret"
+            ]
+        },
+        "b62b938ca71e": {
+            "container_id": "b62b938ca71e",
+            "sensitive_data": [
+                "password",
+                "token",
+                "key",
+                "auth",
+                "secret"
+            ]
+        },
+        "ecc47ad6307b": {
+            "container_id": "ecc47ad6307b",
+            "sensitive_data": [
+                "key"
+            ]
+        }
+    }
+}
